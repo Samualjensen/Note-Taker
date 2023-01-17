@@ -10,7 +10,7 @@ An application called Note Taker that can be used to write and save notes. This 
 * [Tests](#tests)
 * [Questions](#questions)
 ### Installation:
-git clone https://github.com/Samualjensen/Taker-of-Notes.git
+git clone https://github.com/Samualjensen/note-taker.git
 ### Usage:
 N/A
 ### License
