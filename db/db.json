@@ -1,1 +1,12 @@
-[]
+[
+    {
+        "title": "Remember to:",
+        "text": "Install npm requirements before running node.",
+        "id": "2680"
+    },
+    {
+        "title": "Sunday:",
+        "text": "Submit note taker challenge to bootcamp spot.",
+        "id": "46e1"
+    }
+]
