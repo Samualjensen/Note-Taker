@@ -12,6 +12,7 @@ An application called Note Taker that can be used to write and save notes. This 
 ### Installation:
 git clone https://github.com/Samualjensen/note-taker.git
 ### Usage:
+https://morning-garden-79320.herokuapp.com/
 ![Alt text](public/assets/images/note_taker_screenshot.png)
 ### License
 MIT
