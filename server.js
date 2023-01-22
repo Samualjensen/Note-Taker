@@ -3,7 +3,7 @@ const express = require ('express');
 const path = require('path');
 const app = express();
 
-// helper function to generate id
+// helper function to generate unique ids
 const uuid = require("./helpers/uuid")
 
 // import helper function
@@ -17,24 +17,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public'));
 
-// GET route for homepage
+// GET request for homepage
 app.get('/', (req, res) => 
     res.sendFile(path.join(__dirname, '/public/index.html'))
 );
 
-// GET route for notes page
+// GET request for notes page
 app.get('/notes', (req, res) => 
     res.sendFile(path.join(__dirname, '/public/notes.html'))
 );
 
-// GET route for all notes
+// GET request for all notes
 app.get('/api/notes', (req, res) => {
     console.info(`${req.method} request received.`);
-    // Using Read From File helper function to display all notes from the database.
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
   });
 
-  // POST route for new note
+  // POST request for new note
 app.post('/api/notes', (req, res) => {
     console.info(`${req.method} request received.`); 
     const { title, text } = req.body; 
@@ -45,7 +44,7 @@ app.post('/api/notes', (req, res) => {
         id: uuid(),
       };
       
-      // display new note
+      // add new note
       readAndAppend(newNote, './db/db.json');
       res.json(`Note added successfully!`);
     } else {
@@ -53,7 +52,7 @@ app.post('/api/notes', (req, res) => {
     }
   });
 
-// route for deleting a note
+// request for deleting a note
 app.delete(`/api/notes/:id`, (req, res) => {
   
     // logs that a request for deleting a note has been made
